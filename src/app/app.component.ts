@@ -9,7 +9,8 @@ export class AppComponent {
   podcasts = [
     {
       title: 'Junior Developer Toolbox',
-      podcastStatus: 'Active Podcast',
+      category: 'Technology',
+      podcastStatus: 'Active',
       howLongPodcasting: '1 - 2 Years',
       hosts: [
         { firstName: 'Erin', lastName: 'Orstrom' },
@@ -29,7 +30,8 @@ export class AppComponent {
     },
     {
       title: 'Navigate',
-      podcastStatus: 'Active Podcast',
+      category: 'Business',
+      podcastStatus: 'Active',
       howLongPodcasting: '2 - 3 Years',
       hosts: [
         { firstName: 'Clark', lastName: 'Buckner' },

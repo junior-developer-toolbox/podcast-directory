@@ -33,17 +33,35 @@
       placeholder="Keyword"
       aria-label="Keyword"
     />
-    <select class="custom-select mr-sm-2">
+    <select class="custom-select mr-sm-2" placeholder="test">
       <option selected>Category</option>
-      <option value="1">Fiction</option>
-      <option value="2">Real Crime</option>
-      <option value="3">Technology</option>
+      <option value="1">Business</option>
+      <option value="2">Fiction</option>
+      <option value="3">Real Crime</option>
+      <option value="4">Technology</option>
     </select>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
       Search
     </button>
   </form>
+  <hr />
 
   <!-- Podcast List -->
+  <div class="row">
+    <div
+      *ngFor="let podcast of podcasts"
+      class="col-12 col-sm-6 col-md-4 col-lg-3"
+    >
+      <a href="/podcast-detail/:id">
+        <h4>{{ podcast.title }}</h4>
+        <img
+          *ngIf="podcast.imageUrl"
+          src="{{ podcast.imageUrl }}"
+          width="100%"
+          alt="podcast image"
+        />
+      </a>
+    </div>
+  </div>
 </div>
 <!-- Footer -->
