@@ -7,9 +7,10 @@ import { PodcastListComponent } from './components/podcast-list/podcast-list.com
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './routes/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, PodcastListComponent, HeaderComponent, HomeComponent, SearchBarComponent],
+  declarations: [AppComponent, PodcastListComponent, HeaderComponent, HomeComponent, SearchBarComponent, PodcastDetailComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

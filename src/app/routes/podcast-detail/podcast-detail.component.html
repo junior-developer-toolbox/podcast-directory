@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>{{ podcast.title }}</h2>
+  <h3>{{ podcast.category }}</h3>
+  <div class="row">
+    <div class="col-6">
+      <img
+        *ngIf="podcast.imageUrl"
+        src="{{ podcast.imageUrl }}"
+        width="100%"
+        alt="podcast image"
+      />
+    </div>
+    <div class="col-6">
+      <h4>Host<span *ngIf="podcast.hosts.length > 1">s</span></h4>
+      <p *ngFor="let host of podcast.hosts">
+        {{ host.firstName }} {{ host.lastName }}
+      </p>
+      <h4>About</h4>
+      <p>{{ podcast.description }}</p>
+    </div>
+  </div>
+</div>

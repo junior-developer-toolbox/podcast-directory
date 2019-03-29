@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-podcast-list',
-  templateUrl: './podcast-list.component.html',
-  styleUrls: ['./podcast-list.component.sass']
+  selector: 'app-podcast-detail',
+  templateUrl: './podcast-detail.component.html',
+  styleUrls: ['./podcast-detail.component.sass']
 })
-export class PodcastListComponent implements OnInit {
+export class PodcastDetailComponent implements OnInit, OnDestroy {
+  podId: number;
+  private sub: any;
+  selectedPodcast: any;
+  podcast: any;
+
   podcasts = [
     {
       title: 'Junior Developer Toolbox',
@@ -51,7 +57,21 @@ export class PodcastListComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.podId = +params['id'];
+    });
+
+    this.selectedPodcast = this.podcasts.filter(pod => {
+      return pod.id === this.podId;
+    });
+
+    this.podcast = this.selectedPodcast[0];
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }
