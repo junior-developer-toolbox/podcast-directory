@@ -4,8 +4,8 @@
   <div class="row">
     <div class="col-6">
       <img
-        *ngIf="podcast.imageUrl"
-        src="{{ podcast.imageUrl }}"
+        *ngIf="podcast.image"
+        src="{{ podcast.image }}"
         width="100%"
         alt="podcast image"
       />
@@ -15,8 +15,10 @@
       <p *ngFor="let host of podcast.hosts">
         {{ host.firstName }} {{ host.lastName }}
       </p>
+      <p>Casting since {{ podcast.yearStarted }}</p>
       <h4>About</h4>
       <p>{{ podcast.description }}</p>
     </div>
   </div>
+  <div class="row"></div>
 </div>

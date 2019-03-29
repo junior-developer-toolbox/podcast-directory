@@ -8,8 +8,8 @@
       <a href="/podcast/{{ podcast.id }}">
         <h4>{{ podcast.title }}</h4>
         <img
-          *ngIf="podcast.imageUrl"
-          src="{{ podcast.imageUrl }}"
+          *ngIf="podcast.image"
+          src="{{ podcast.image }}"
           width="100%"
           alt="podcast image"
         />
