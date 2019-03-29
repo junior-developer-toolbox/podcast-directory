@@ -19,7 +19,7 @@ export class PodcastListComponent implements OnInit {
       description:
         'Bringing you real talk from the trenches about everyday life as a Junior Developer.',
       imageUrl:
-        'https://juniordevelopertoolbox.com/wp-content/uploads/2017/09/v3-100x103.png',
+        'https://juniordevelopertoolbox.com/wp-content/uploads/2018/09/Jr_Dev_Toolbox_Logo_2018_250.png',
       website: 'https://juniordevelopertoolbox.com',
       rssFeed: 'https://juniordevelopertoolbox.com/feed/',
       iTunesLink:
