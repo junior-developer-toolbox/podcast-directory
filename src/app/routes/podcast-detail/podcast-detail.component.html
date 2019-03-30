@@ -20,5 +20,55 @@
       <p>{{ podcast.description }}</p>
     </div>
   </div>
-  <div class="row"></div>
+  <!-- Subscription Information -->
+  <div class="row">
+    <div class="col-12">
+      <h6>Subscribe at:</h6>
+      <br />
+      <p>
+        <span *ngIf="podcast.subscription.apple">
+          <a href="{{ podcast.subscription.apple }}">iTunes</a> |
+        </span>
+        <span *ngIf="podcast.subscription.google">
+          <a href="{{ podcast.subscription.google }}">Google Podcasts</a> |
+        </span>
+        <span *ngIf="podcast.subscription.radioPublic">
+          <a href="{{ podcast.subscription.radioPublic }}">Radio Public</a> |
+        </span>
+        <span *ngIf="podcast.subscription.rss">
+          <a href="{{ podcast.subscription.rss }}">RSS</a> |
+        </span>
+        <span *ngIf="podcast.subscription.stitcher">
+          <a href="{{ podcast.subscription.stitcher }}">Stitcher</a>
+        </span>
+      </p>
+    </div>
+  </div>
+  <!-- Social / Contact Information -->
+  <div class="row">
+    <div class="col-12">
+      <h6>Connect at:</h6>
+      <br />
+      <p>
+        <span *ngIf="podcast.contact.website">
+          <a href="{{ podcast.contact.website }}">Website</a> |
+        </span>
+        <span *ngIf="podcast.contact.email">
+          <a href="{{ podcast.contact.email }}">Email</a> |
+        </span>
+        <span *ngIf="podcast.contact.facebook">
+          <a href="{{ podcast.contact.facebook }}">Facebook</a> |
+        </span>
+        <span *ngIf="podcast.contact.twitter">
+          <a href="{{ podcast.contact.twitter }}">Twitter</a> |
+        </span>
+        <span *ngIf="podcast.contact.instagram">
+          <a href="{{ podcast.contact.instagram }}">Instagram</a>
+        </span>
+        <span *ngIf="podcast.contact.linkedIn">
+          <a href="{{ podcast.contact.linkedIn }}">LinkedIn</a>
+        </span>
+      </p>
+    </div>
+  </div>
 </div>
