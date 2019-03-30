@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // Components
 import { HeaderComponent } from './components/header/header.component';
@@ -21,7 +22,7 @@ import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.c
     SearchBarComponent,
     PodcastDetailComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, AngularFontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
