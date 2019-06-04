@@ -43,8 +43,7 @@ export class PodcastDataService {
         { firstName: 'Erin', lastName: 'Orstrom' },
         { firstName: 'Dave', lastName: 'Harned' }
       ],
-      image:
-        'https://juniordevelopertoolbox.com/wp-content/uploads/2018/09/Jr_Dev_Toolbox_Logo_2018_250.png',
+      image: 'https://secureimg.stitcher.com/feedimagesplain328/249733.jpg',
       status: 'Inactive',
       subscription: {
         apple:
