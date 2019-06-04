@@ -13,8 +13,6 @@ export class PodcastDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   podcast: Podcast;
 
-  podcasts = '';
-
   constructor(
     private route: ActivatedRoute,
     private podcastDataService: PodcastDataService
