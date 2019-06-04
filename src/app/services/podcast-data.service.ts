@@ -218,7 +218,7 @@ export class PodcastDataService {
       },
       description:
         'Nothing fancy here -- just the simple audio diary of a girl in space.',
-      hosts: [{ firstName: '', lastName: '' }, { firstName: '', lastName: '' }],
+      hosts: [],
       image: 'https://secureimg.stitcher.com/feedimagesplain328/150375.jpg',
       status: 'Active',
       subscription: {
