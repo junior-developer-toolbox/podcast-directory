@@ -17,10 +17,14 @@ export class Podcast {
   status: string;
   subscription: {
     apple: string;
+    breaker: string;
     google: string;
+    overcast: string;
     radioPublic: string;
     rss: string;
+    spotify: string;
     stitcher: string;
+    tuneIn: string;
   };
   title: string;
   username: string;
