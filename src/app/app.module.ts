@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // Components
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.component';
 import { PodcastEditComponent } from './routes/podcast-edit/podcast-edit.component';
+import { PodcastFormComponent } from './components/podcast-form/podcast-form.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,15 @@ import { PodcastEditComponent } from './routes/podcast-edit/podcast-edit.compone
     HomeComponent,
     SearchBarComponent,
     PodcastDetailComponent,
-    PodcastEditComponent
+    PodcastEditComponent,
+    PodcastFormComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, AngularFontAwesomeModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
