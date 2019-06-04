@@ -1,18 +1,21 @@
 <!-- Podcast List -->
 <div class="container">
   <div class="row">
-    <div
-      *ngFor="let podcast of podcasts"
-      class="col-12 col-sm-6 col-md-4 col-lg-3"
-    >
+    <div *ngFor="let podcast of podcasts" class="col-6 col-md-4 col-lg-3 mb-3">
       <a href="/podcast/{{ podcast.id }}">
-        <h4>{{ podcast.title }}</h4>
-        <img
-          *ngIf="podcast.image"
-          src="{{ podcast.image }}"
-          width="100%"
-          alt="podcast image"
-        />
+        <div class="hover">
+          <img
+            class="img-responsive"
+            *ngIf="podcast.image"
+            src="{{ podcast.image }}"
+            width="100%"
+            alt="{{ podcast.title }} logo"
+          />
+          <div class="overlay">
+            <h4>{{ podcast.title }}</h4>
+            <p>{{ podcast.description }}</p>
+          </div>
+        </div>
       </a>
     </div>
   </div>
