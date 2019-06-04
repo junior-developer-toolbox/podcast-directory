@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { PodcastDataService } from './../../services/podcast-data.service';
 import { Podcast } from './../../classes/podcast';
 
@@ -29,6 +28,10 @@ export class PodcastDetailComponent implements OnInit, OnDestroy {
 
     // retrieve podcast data
     this.podcast = this.podcastDataService.getOnePodcast(this.podId);
+  }
+
+  isEmpty(podInfo) {
+    return Object.values(podInfo).every(key => key === null || key === '');
   }
 
   ngOnDestroy() {
