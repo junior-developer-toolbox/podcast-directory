@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.component';
+import { PodcastEditComponent } from './routes/podcast-edit/podcast-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.c
     HeaderComponent,
     HomeComponent,
     SearchBarComponent,
-    PodcastDetailComponent
+    PodcastDetailComponent,
+    PodcastEditComponent
   ],
   imports: [BrowserModule, AppRoutingModule, AngularFontAwesomeModule],
   providers: [],

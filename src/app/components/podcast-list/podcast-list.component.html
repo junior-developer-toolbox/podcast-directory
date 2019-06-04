@@ -2,7 +2,10 @@
 <div class="container">
   <div class="row">
     <div *ngFor="let podcast of podcasts" class="col-6 col-md-4 col-lg-3 mb-3">
-      <a href="/podcast/{{ podcast.id }}">
+      <a
+        routerLink="/podcast/{{ podcast.id }}"
+        routerLinkActive="router-link-active"
+      >
         <div class="hover">
           <img
             class="img-responsive"
