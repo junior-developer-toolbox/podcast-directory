@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PodcastEditComponent } from './podcast-edit.component';
+import { AccountNavComponent } from './account-nav.component';
 
-describe('PodcastEditComponent', () => {
-  let component: PodcastEditComponent;
-  let fixture: ComponentFixture<PodcastEditComponent>;
+describe('AccountNavComponent', () => {
+  let component: AccountNavComponent;
+  let fixture: ComponentFixture<AccountNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PodcastEditComponent ]
+      declarations: [ AccountNavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PodcastEditComponent);
+    fixture = TestBed.createComponent(AccountNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

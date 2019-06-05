@@ -13,8 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.component';
-import { PodcastEditComponent } from './routes/podcast-edit/podcast-edit.component';
+import { PodcastInfoComponent } from './routes/podcast-info/podcast-info.component';
 import { PodcastFormComponent } from './components/podcast-form/podcast-form.component';
+import { AccountNavComponent } from './components/account-nav/account-nav.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { PodcastFormComponent } from './components/podcast-form/podcast-form.com
     HomeComponent,
     SearchBarComponent,
     PodcastDetailComponent,
-    PodcastEditComponent,
-    PodcastFormComponent
+    PodcastInfoComponent,
+    PodcastFormComponent,
+    AccountNavComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PodcastDataService } from './../../services/podcast-data.service';
-import { Podcast } from './../../classes/podcast';
+import { PodcastDataService } from '../../services/podcast-data.service';
+import { Podcast } from '../../classes/podcast';
 
 @Component({
-  selector: 'app-podcast-edit',
-  templateUrl: './podcast-edit.component.html',
-  styleUrls: ['./podcast-edit.component.sass']
+  selector: 'app-podcast-info',
+  templateUrl: './podcast-info.component.html',
+  styleUrls: ['./podcast-info.component.sass']
 })
-export class PodcastEditComponent implements OnInit {
+export class PodcastInfoComponent implements OnInit {
   podId: number;
   private sub: any;
   podcast: Podcast;

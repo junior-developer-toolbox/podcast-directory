@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './routes/home/home.component';
 import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.component';
-import { PodcastEditComponent } from './routes/podcast-edit/podcast-edit.component';
+import { PodcastInfoComponent } from './routes/podcast-info/podcast-info.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'podcast/:id', component: PodcastDetailComponent },
-  { path: 'podcast/:id/edit', component: PodcastEditComponent }
+  { path: 'podcast/:id/info', component: PodcastInfoComponent }
 ];
 
 @NgModule({

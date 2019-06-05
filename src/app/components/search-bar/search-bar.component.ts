@@ -1,3 +1,4 @@
+import { FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { PodcastDataService } from './../../services/podcast-data.service';
@@ -9,10 +10,18 @@ import { PodcastDataService } from './../../services/podcast-data.service';
 })
 export class SearchBarComponent implements OnInit {
   categories: string[];
+  searchForm;
 
-  constructor(private podcastdataService: PodcastDataService) {}
+  constructor(
+    private fb: FormBuilder,
+    private podcastdataService: PodcastDataService
+  ) {}
 
   ngOnInit() {
     this.categories = this.podcastdataService.getCategories();
+    this.searchForm = this.fb.group({
+      keyword: '',
+      category: ''
+    });
   }
 }
