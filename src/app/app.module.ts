@@ -16,6 +16,8 @@ import { PodcastDetailComponent } from './routes/podcast-detail/podcast-detail.c
 import { PodcastInfoComponent } from './routes/podcast-info/podcast-info.component';
 import { PodcastFormComponent } from './components/podcast-form/podcast-form.component';
 import { AccountNavComponent } from './components/account-nav/account-nav.component';
+import { SubscriptionFormComponent } from './components/subscription-form/subscription-form.component';
+import { SocialFormComponent } from './components/social-form/social-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { AccountNavComponent } from './components/account-nav/account-nav.compon
     PodcastDetailComponent,
     PodcastInfoComponent,
     PodcastFormComponent,
-    AccountNavComponent
+    AccountNavComponent,
+    SubscriptionFormComponent,
+    SocialFormComponent
   ],
   imports: [
     BrowserModule,

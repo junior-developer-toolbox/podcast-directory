@@ -12,6 +12,7 @@ export class PodcastInfoComponent implements OnInit {
   podId: number;
   private sub: any;
   podcast: Podcast;
+  progress: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,5 +27,17 @@ export class PodcastInfoComponent implements OnInit {
 
     // retrieve podcast data
     this.podcast = this.podcastDataService.getOnePodcast(this.podId);
+
+    this.progress = 1;
   }
+
+  lastPage() {
+    this.progress--;
+  }
+
+  nextPage() {
+    this.progress++;
+  }
+
+  savePodcast() {}
 }

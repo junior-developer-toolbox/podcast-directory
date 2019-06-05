@@ -24,4 +24,8 @@ export class SearchBarComponent implements OnInit {
       category: ''
     });
   }
+
+  search() {
+    // apply filter to podcast list
+  }
 }

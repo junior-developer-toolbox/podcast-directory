@@ -1,6 +1,6 @@
 <!-- Search -->
 <div class="container">
-  <h3 class="mt-5">Search Our Podcast Directory</h3>
+  <h3 class="mt-5">Search the Nashville Podcast Directory</h3>
   <form [formGroup]="searchForm" class="form-inline my-2 my-lg-0">
     <input
       class="form-control mr-sm-2"
@@ -15,8 +15,14 @@
         category
       }}</option>
     </select>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+    <button class="btn btn-outline-success my-2 my-md-0" (click)="search()">
       Search
+    </button>
+    <button
+      class="btn btn-outline-secondary ml-2 my-2 my-md-0"
+      (click)="search()"
+    >
+      Clear
     </button>
   </form>
   <hr />

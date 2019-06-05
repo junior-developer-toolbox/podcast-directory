@@ -1,16 +1,33 @@
 <div class="container">
-  <div class="row my-5">
-    <div class="col-12 text-center">
-      <h2>Tell us about your podcast!</h2>
-    </div>
-  </div>
+  <app-podcast-form *ngIf="progress === 1"></app-podcast-form>
+  <app-subscription-form *ngIf="progress === 2"></app-subscription-form>
+  <app-social-form *ngIf="progress === 3"></app-social-form>
 
-  <app-podcast-form></app-podcast-form>
-
+  <hr />
   <div class="text-right">
-    <button class="btn btn-secondary" routerLink="/podcast/{{ podcast.id }}">
+    <button class="btn btn-danger" routerLink="/podcast/{{ podcast.id }}">
       Cancel
     </button>
-    <button class="btn btn-primary ml-2">Save</button>
+    <button
+      class="btn btn-secondary ml-2"
+      *ngIf="progress !== 1"
+      (click)="lastPage()"
+    >
+      Back
+    </button>
+    <button
+      class="btn btn-primary ml-2"
+      *ngIf="progress !== 3"
+      (click)="nextPage()"
+    >
+      Next
+    </button>
+    <button
+      class="btn btn-success ml-2"
+      *ngIf="progress === 3"
+      (click)="savePodcast()"
+    >
+      Save
+    </button>
   </div>
 </div>
