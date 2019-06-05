@@ -319,5 +319,14 @@ export class PodcastDataService {
     return this.podcastCategories;
   };
 
+  // generates descending year range starting with current back to the invention of podcasting
+  getYears = () => {
+    const years = [];
+    for (let i = new Date().getFullYear(); i >= 2003; i--) {
+      years.push(i);
+    }
+    return years;
+  };
+
   constructor() {}
 }

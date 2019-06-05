@@ -7,8 +7,10 @@
 
   <app-podcast-form></app-podcast-form>
 
-  <button class="btn btn-secondary mr-2" routerLink="/podcast/{{ podcast.id }}">
-    Cancel
-  </button>
-  <button class="btn btn-primary">Save</button>
+  <div class="text-right">
+    <button class="btn btn-secondary" routerLink="/podcast/{{ podcast.id }}">
+      Cancel
+    </button>
+    <button class="btn btn-primary ml-2">Save</button>
+  </div>
 </div>

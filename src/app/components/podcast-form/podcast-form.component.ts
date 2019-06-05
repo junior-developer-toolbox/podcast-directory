@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { PodcastDataService } from 'src/app/services/podcast-data.service';
 
 @Component({
@@ -9,25 +9,47 @@ import { PodcastDataService } from 'src/app/services/podcast-data.service';
 })
 export class PodcastFormComponent implements OnInit {
   categories: string[];
-  years: number[] = [];
+  years: number[];
+  podForm;
 
-  podForm = new FormGroup({
-    title: new FormControl(''),
-    description: new FormControl(''),
-    category: new FormControl(''),
-    yearStarted: new FormControl()
-  });
-
-  constructor(private podcastdataService: PodcastDataService) {}
+  constructor(
+    private fb: FormBuilder,
+    private podcastdataService: PodcastDataService
+  ) {}
 
   ngOnInit() {
+    this.podForm = this.fb.group({
+      title: '',
+      description: '',
+      category: '',
+      yearStarted: '',
+      hosts: this.fb.array([])
+    });
+
+    this.addHost();
+
     this.categories = this.podcastdataService.getCategories();
 
-    // create descending year array starting with current through invention of podcasting
-    for (let i = new Date().getFullYear(); i >= 2003; i--) {
-      this.years.push(i);
-    }
+    this.years = this.podcastdataService.getYears();
   }
 
-  handleSave() {}
+  get hostForms() {
+    return this.podForm.get('hosts') as FormArray;
+  }
+
+  addHost() {
+    const host = this.fb.group({
+      firstName: '',
+      lastName: ''
+    });
+    this.hostForms.push(host);
+  }
+
+  deleteHost(i) {
+    this.hostForms.removeAt(i);
+  }
+
+  consoleData() {
+    console.log(this.podForm.value);
+  }
 }
