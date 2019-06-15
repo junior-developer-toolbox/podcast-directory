@@ -18,6 +18,7 @@ import { PodcastFormComponent } from './components/podcast-form/podcast-form.com
 import { AccountNavComponent } from './components/account-nav/account-nav.component';
 import { SubscriptionFormComponent } from './components/subscription-form/subscription-form.component';
 import { SocialFormComponent } from './components/social-form/social-form.component';
+import { LoginComponent } from './routes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SocialFormComponent } from './components/social-form/social-form.compon
     PodcastFormComponent,
     AccountNavComponent,
     SubscriptionFormComponent,
-    SocialFormComponent
+    SocialFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

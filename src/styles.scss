@@ -90,3 +90,13 @@
   color: grey;
   font-style: italic;
 }
+
+/* Auth View */
+
+.auth-container {
+  max-width: 500px;
+}
+
+li.nav-item.active {
+  background-color: #eee;
+}
