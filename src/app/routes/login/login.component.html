@@ -42,6 +42,9 @@
         <div *ngIf="activeTab === 'forgot'">
           <button class="btn btn-primary" (click)="resetUser()">Reset</button>
         </div>
+        <div *ngIf="activeTab === 'login'">
+          <button class="btn btn-danger" (click)="logout()">Log Out</button>
+        </div>
       </div>
 
       <a (click)="activeTab = 'forgot'" href="javascript:void(0)">
