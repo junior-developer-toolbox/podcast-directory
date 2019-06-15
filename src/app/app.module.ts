@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
 // Components
 import { HeaderComponent } from './components/header/header.component';
 import { PodcastListComponent } from './components/podcast-list/podcast-list.component';
@@ -38,6 +43,8 @@ import { LoginComponent } from './routes/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     AngularFontAwesomeModule,
     ReactiveFormsModule
   ],

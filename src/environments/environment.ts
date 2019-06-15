@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyCCcEyqibJ-sD07MmeXnQ9-bSWPFkRd8H8',
+    authDomain: 'pocast-test.firebaseapp.com',
+    databaseURL: 'https://pocast-test.firebaseio.com',
+    projectId: 'pocast-test',
+    storageBucket: 'pocast-test.appspot.com',
+    messagingSenderId: '377518335179',
+    appId: '1:377518335179:web:da57df0d32254bd1'
+  }
 };
 
 /*
