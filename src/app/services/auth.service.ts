@@ -1,3 +1,5 @@
+import { AuthState } from './../classes/authState';
+import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -5,12 +7,24 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root'
 })
 export class AuthService {
+  authState = new Subject<AuthState>();
+
   constructor(private angularFireAuth: AngularFireAuth) {
     this.angularFireAuth.authState.subscribe(userResponse => {
       if (userResponse) {
         localStorage.setItem('user', JSON.stringify(userResponse));
+        this.authState.next({
+          isLoggedIn: true,
+          loggedInUser: userResponse.email,
+          isUserVerified: userResponse.emailVerified
+        });
       } else {
         localStorage.setItem('user', null);
+        this.authState.next({
+          isLoggedIn: false,
+          loggedInUser: '',
+          isUserVerified: false
+        });
       }
     });
   }
@@ -31,10 +45,6 @@ export class AuthService {
 
   async logout() {
     return await this.angularFireAuth.auth.signOut();
-  }
-
-  isUserLoggedIn() {
-    return JSON.parse(localStorage.getItem('user'));
   }
 
   async verify() {
