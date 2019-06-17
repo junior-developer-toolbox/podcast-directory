@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       .then(
         res => {
           console.log(res.user.email, 'was successfully registered!');
+          // TODO: BUG: Just registering successfully seemed to log me in.
         },
         err => {
           console.log('danger', err.message);

@@ -93,7 +93,7 @@ export class PodcastDataService {
         tuneIn: ''
       },
       title: 'Navigate',
-      username: '',
+      username: 'nashvillemaverick@yahoo.com',
       yearStarted: 2016
     },
     {
