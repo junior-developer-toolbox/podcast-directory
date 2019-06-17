@@ -40,14 +40,20 @@
           </button>
         </div>
         <div *ngIf="activeTab === 'forgot'">
-          <button class="btn btn-primary" (click)="resetUser()">Reset</button>
-        </div>
-        <div *ngIf="activeTab === 'login'">
-          <button class="btn btn-danger" (click)="logout()">Log Out</button>
+          <button class="btn btn-danger" (click)="activeTab = 'login'">
+            Cancel
+          </button>
+          <button class="btn btn-primary ml-2" (click)="resetUser()">
+            Reset
+          </button>
         </div>
       </div>
 
-      <a (click)="activeTab = 'forgot'" href="javascript:void(0)">
+      <a
+        (click)="activeTab = 'forgot'"
+        *ngIf="activeTab === 'login'"
+        href="javascript:void(0)"
+      >
         Forgot Password
       </a>
     </div>

@@ -17,18 +17,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   loginUser() {
-    console.log('Logging in:', this.emailInput.value);
+    console.log('Logging in as:', this.emailInput.value);
     this.authService
       .login(this.emailInput.value, this.passwordInput.value)
       .then(
         res => {
-          console.log(res);
-          console.log('success', 'Successfully Logged In!');
+          console.log(res.user.email, 'successfully logged in!');
         },
         err => {
           console.log('danger', err.message);
         }
       );
+    this.clearForm();
   }
 
   registerUser() {
@@ -37,22 +37,25 @@ export class LoginComponent implements OnInit {
       .register(this.emailInput.value, this.passwordInput.value)
       .then(
         res => {
-          console.log(res);
-          console.log('success', 'Successfully Registered!');
+          console.log(res.user.email, 'was successfully registered!');
         },
         err => {
           console.log('danger', err.message);
         }
       );
+    this.clearForm();
   }
 
   resetUser() {
-    console.log('Resetting:');
-    console.table({ email: this.emailInput.value });
+    console.log('Resetting:', this.emailInput.value);
+    this.authService.resetPw(this.emailInput.value).then(res => {
+      console.log('Resent link sent to this email address');
+    });
+    this.clearForm();
   }
 
-  logout() {
-    console.log('Logging out');
-    this.authService.logout().then(() => {});
+  clearForm() {
+    this.emailInput.reset();
+    this.passwordInput.reset();
   }
 }
