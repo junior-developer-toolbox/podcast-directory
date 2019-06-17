@@ -58,7 +58,7 @@ export class PodcastDataService {
         tuneIn: ''
       },
       title: 'Junior Developer Toolbox',
-      username: 'jdt',
+      username: 'dharned@gmail.com',
       yearStarted: 2017
     },
     {

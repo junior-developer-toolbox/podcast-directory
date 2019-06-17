@@ -18,10 +18,6 @@ export class AccountNavComponent implements OnInit {
       this.isLoggedIn = state.isLoggedIn;
       this.loggedInUser = state.loggedInUser;
       this.userVerified = state.isUserVerified;
-      console.log('account-nav authState:');
-      console.log(this.isLoggedIn);
-      console.log(this.loggedInUser);
-      console.log(this.userVerified);
     });
   }
 

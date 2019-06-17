@@ -1,5 +1,5 @@
 import { AuthState } from './../classes/authState';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -7,7 +7,11 @@ import { AngularFireAuth } from '@angular/fire/auth';
   providedIn: 'root'
 })
 export class AuthService {
-  authState = new Subject<AuthState>();
+  authState = new BehaviorSubject<AuthState>({
+    isLoggedIn: false,
+    loggedInUser: '',
+    isUserVerified: false
+  });
 
   constructor(private angularFireAuth: AngularFireAuth) {
     this.angularFireAuth.authState.subscribe(userResponse => {

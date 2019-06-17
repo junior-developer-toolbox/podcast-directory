@@ -83,8 +83,17 @@
       </p>
     </div>
   </div>
-  <!-- TODO: Make visible when authenticated and authorized podcast owner -->
-  <a class="btn btn-primary" routerLink="/podcast/{{ podcast.id }}/info"
-    >Edit Podcast
-  </a>
+
+  <div *ngIf="isLoggedIn">
+    <div *ngIf="loggedInUser === podcast.username">
+      <div *ngIf="isUserVerified">
+        <a class="btn btn-primary" routerLink="/podcast/{{ podcast.id }}/info"
+          >Edit Podcast
+        </a>
+      </div>
+      <div class="text-muted font-italic" *ngIf="!isUserVerified">
+        Please verify your email address to edit your podcast information.
+      </div>
+    </div>
+  </div>
 </div>

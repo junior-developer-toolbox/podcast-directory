@@ -1,4 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PodcastDataService } from './../../services/podcast-data.service';
 import { Podcast } from './../../classes/podcast';
@@ -10,22 +20,35 @@ import { Podcast } from './../../classes/podcast';
 })
 export class PodcastDetailComponent implements OnInit, OnDestroy {
   podId: number;
-  private sub: any;
+  private podSub: any;
+  private authSub: any;
   podcast: Podcast;
+
+  isLoggedIn: boolean;
+  loggedInUser: string;
+  isUserVerified: boolean;
 
   constructor(
     private route: ActivatedRoute,
-    private podcastDataService: PodcastDataService
+    private podcastDataService: PodcastDataService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
     // get podcast id from route params
-    this.sub = this.route.params.subscribe(params => {
+    this.podSub = this.route.params.subscribe(params => {
       this.podId = +params['id'];
     });
 
     // retrieve podcast data
     this.podcast = this.podcastDataService.getOnePodcast(this.podId);
+
+    // check loggedIn status
+    this.authSub = this.authService.authState.subscribe(state => {
+      this.isLoggedIn = state.isLoggedIn;
+      this.loggedInUser = state.loggedInUser;
+      this.isUserVerified = state.isUserVerified;
+    });
   }
 
   isEmpty(podInfo) {
@@ -33,6 +56,7 @@ export class PodcastDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this.podSub.unsubscribe();
+    this.authSub.unsubscribe();
   }
 }
