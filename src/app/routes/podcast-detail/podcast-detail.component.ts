@@ -1,14 +1,5 @@
 import { AuthService } from './../../services/auth.service';
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked
-} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PodcastDataService } from './../../services/podcast-data.service';
 import { Podcast } from './../../classes/podcast';
@@ -16,7 +7,7 @@ import { Podcast } from './../../classes/podcast';
 @Component({
   selector: 'app-podcast-detail',
   templateUrl: './podcast-detail.component.html',
-  styleUrls: ['./podcast-detail.component.sass']
+  styleUrls: ['./podcast-detail.component.scss']
 })
 export class PodcastDetailComponent implements OnInit, OnDestroy {
   podId: number;

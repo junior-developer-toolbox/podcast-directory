@@ -6,7 +6,7 @@ import { Podcast } from '../../classes/podcast';
 @Component({
   selector: 'app-podcast-info',
   templateUrl: './podcast-info.component.html',
-  styleUrls: ['./podcast-info.component.sass']
+  styleUrls: ['./podcast-info.component.scss']
 })
 export class PodcastInfoComponent implements OnInit {
   podId: number;

@@ -5,7 +5,7 @@ import { PodcastDataService } from 'src/app/services/podcast-data.service';
 @Component({
   selector: 'app-podcast-form',
   templateUrl: './podcast-form.component.html',
-  styleUrls: ['./podcast-form.component.sass']
+  styleUrls: ['./podcast-form.component.scss']
 })
 export class PodcastFormComponent implements OnInit {
   categories: string[];

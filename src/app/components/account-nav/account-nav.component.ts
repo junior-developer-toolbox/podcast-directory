@@ -4,7 +4,7 @@ import { AuthService } from './../../services/auth.service';
 @Component({
   selector: 'app-account-nav',
   templateUrl: './account-nav.component.html',
-  styleUrls: ['./account-nav.component.sass']
+  styleUrls: ['./account-nav.component.scss']
 })
 export class AccountNavComponent implements OnInit {
   isLoggedIn: boolean;

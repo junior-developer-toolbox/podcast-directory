@@ -6,7 +6,7 @@ import { Podcast } from './../../classes/podcast';
 @Component({
   selector: 'app-podcast-list',
   templateUrl: './podcast-list.component.html',
-  styleUrls: ['./podcast-list.component.sass']
+  styleUrls: ['./podcast-list.component.scss']
 })
 export class PodcastListComponent implements OnInit {
   podcasts: Podcast[];

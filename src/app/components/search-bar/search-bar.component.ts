@@ -6,7 +6,7 @@ import { PodcastDataService } from './../../services/podcast-data.service';
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.sass']
+  styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
   categories: string[];

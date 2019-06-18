@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-subscription-form',
   templateUrl: './subscription-form.component.html',
-  styleUrls: ['./subscription-form.component.sass']
+  styleUrls: ['./subscription-form.component.scss']
 })
 export class SubscriptionFormComponent implements OnInit {
   subForm;

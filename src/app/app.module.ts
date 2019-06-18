@@ -38,7 +38,8 @@ import { LoginComponent } from './routes/login/login.component';
     AccountNavComponent,
     SubscriptionFormComponent,
     SocialFormComponent,
-    LoginComponent
+    LoginComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
