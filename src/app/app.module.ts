@@ -24,6 +24,7 @@ import { AccountNavComponent } from './components/account-nav/account-nav.compon
 import { SubscriptionFormComponent } from './components/subscription-form/subscription-form.component';
 import { SocialFormComponent } from './components/social-form/social-form.component';
 import { LoginComponent } from './routes/login/login.component';
+import { TypographyComponent } from './routes/typography/typography.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { LoginComponent } from './routes/login/login.component';
     SubscriptionFormComponent,
     SocialFormComponent,
     LoginComponent,
-    TestComponent
+    TypographyComponent
   ],
   imports: [
     BrowserModule,
